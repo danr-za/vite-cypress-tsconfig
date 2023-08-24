@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig, searchForWorkspaceRoot } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { workspaceRoot } from '@nx/devkit';
 
 export default defineConfig({
@@ -13,9 +14,8 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    tsconfigPaths({
-      root: workspaceRoot,
-    }),
+    // tsconfigPaths({ root: '../../' }),
+    nxViteTsPaths(),
   ],
   server: {
     fs: {

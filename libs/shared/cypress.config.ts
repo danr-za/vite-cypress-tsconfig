@@ -7,6 +7,6 @@ export default defineConfig({
       viteConfig,
       bundler: 'vite',
       framework: 'react',
-    }
+    },
   },
 });
